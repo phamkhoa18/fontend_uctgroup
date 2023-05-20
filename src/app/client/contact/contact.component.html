@@ -1,0 +1,99 @@
+
+<app-loading *ngIf="isLoading" ></app-loading>
+
+<main>
+   <section class="gioithieu" >
+        <div class="banner" >
+              <h2>LIÊN HỆ</h2>
+        </div>
+        <div class="item_gioithieu">
+            <div class="container">
+              <div class="row">
+                  <div class="col-xs-12 col-md-12 col-lg-12" >
+                    <p class="thongtin" [innerHTML]="isContact.content" >
+
+                    </p>
+                  </div>
+              </div>
+
+              <form   (submit)="submit(userForm)" #userForm="ngForm">
+              <div class="row">
+                  <div class="col-xs-12 col-md-12 col-lg-6">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12 col-lg-6 css">
+                        <div class="none">
+                        <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="4" id="" class="form-control tron" placeholder="Tên" aria-describedby="helpId">
+                      </div>
+                      <div class="form-control1" style="font-weight: bold; text-align: left; font-size: 15px; color: red;margin-top: 10px; margin-left: 10px;" *ngIf="email?.invalid && (email.dirty || isValid)">
+                        <span class="text-danger" *ngIf="name.errors?.['required']">Vui lòng nhập tên</span>
+                        <span class="text-danger" *ngIf="name.errors?.['minlength']">
+                            Tên tối thiểu 4 ký tự
+                        </span>
+                    </div>
+                      </div>
+
+                      <div class="col-xs-12 col-md-12 col-lg-6 css" >
+                        <div class="none">
+
+                        <input type="email" name="email"  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel" [(ngModel)]="user.email" class="form-control tron" placeholder="Email" aria-describedby="helpId">
+                      </div>
+                      <div class="form-control1" style="font-weight: bold; text-align: left; font-size: 15px; color: red;margin-top: 10px; margin-left: 10px;" *ngIf="email?.invalid && (email.dirty || isValid)">
+                        <span class="text-danger" *ngIf="email.errors?.['required']">Vui lòng nhập email</span>
+                        <span class="text-danger" *ngIf="email.errors?.['pattern']">
+                            Vui lòng nhập email hợp lệ
+                        </span>
+                    </div>
+                      </div>
+                      <div class="col-xs-12 col-md-12 col-lg-6 css">
+                        <div class="none">
+                        <input type="text" name="address" #address="ngModel" [(ngModel)]="user.address"  id="" class="form-control tron" placeholder="Địa chỉ" aria-describedby="helpId">
+                      </div>
+                      </div>
+                      <div class="col-xs-12 col-md-12 col-lg-6 css">
+                        <div class="none">
+                          <input type="number" minlength="9" required maxlength="11" name="sdt" #sdt="ngModel" [(ngModel)]="user.phone" id="" class="form-control tron" placeholder="Số điện thoại" aria-describedby="helpId">
+                          <div class="form-control1" style="font-weight: bold; text-align: left; font-size: 15px; color: red;margin-top: 10px; margin-left: 10px;" *ngIf="sdt?.invalid && (email.dirty || isValid)">
+                            <span class="text-danger" *ngIf="sdt.errors?.['required']">Vui lòng nhập số điện thoại</span>
+                            <span class="text-danger" *ngIf="sdt.errors?.['minlength'] || sdt.errors?.['maxlength']">
+                              Số điện thoại tối thiểu 9 số và tối đa 11 số
+                            </span>
+                            <span class="text-danger" *ngIf="sdt.errors?.['invalidPhoneNumber']">
+                              Số điện thoại không hợp lệ
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-12 col-lg-12 css">
+                        <div class="none">
+
+                        <input type="text" name="title" #title="ngModel" [(ngModel)]="user.title" id="" class="form-control tron" placeholder="Tiêu đề" aria-describedby="helpId">
+
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-xs-12 col-md-12 col-lg-6" style="padding-right: 0; padding-left: 10px;">
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12 col-lg-12" >
+                            <div class="mb-3">
+
+                              <textarea #content="ngModel" [(ngModel)]="user.content" placeholder="Nội dung" class="form-control tron1" name="content"  id="" rows="7"></textarea>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <button type="submit" class="link-btn"  style="text-align: center; cursor: pointer;">Gửi</button>
+            </form>
+
+
+              <div class="bando" style="padding-top: 30px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4775077144204!2d106.63175927522624!3d10.774692559225338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ea144839ef1%3A0x798819bdcd0522b0!2zVHLGsOG7nW5nIENhbyDEkOG6s25nIEPDtG5nIE5naOG7hyBUaMO0bmcgVGluIFRwLkjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1682328262539!5m2!1svi!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+        </div>
+
+
+   </section>
+</main>

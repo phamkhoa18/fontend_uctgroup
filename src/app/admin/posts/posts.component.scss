@@ -1,0 +1,35 @@
+@import url('../admin-styles.scss');
+table {
+  cursor: pointer;
+}
+.title:hover {
+  color: orangered;
+  transition: all 0.4ms ;
+}
+.title {
+  transition: all 0.4ms ease;
+}
+
+
+.edit:hover {
+  color: orangered;
+}
+.remove:hover {
+  color: orangered;
+}
+
+
+@media screen and (max-width: 767px) {
+  .image_hien {
+    width: 200px;
+  }
+  .select_hien {
+    width: 120px;
+  }
+  .date_hien {
+    width: 100px;
+  }
+  .title_hien {
+    width: 200px;
+  }
+}

@@ -1,0 +1,40 @@
+ <!-- header -->
+ <header>
+  <nav>
+      <div class="cover">
+          <div class="nav-left">
+              <div class="logo">
+                  <img style="cursor: pointer;" routerLink="{{isLogo.link}}" [src]="isLogo.image" alt="">
+              </div>
+          </div>
+          <div class="nav-center"></div>
+          <div class="nav-right">
+              <ul [ngClass]="{'open': isMenu}"  class="menu">
+                  <li class="menu-item"  *ngFor="let item of listmenu" routerLink={{item.link}} routerLinkActive="click" ariaCurrentWhenActive="page" ><a>{{item.title}}</a></li>
+              </ul>
+              <div (click)="openSearch()" class="icon_search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div [ngClass]="{'opensearch': isSearch}" class="search_results">
+               <input type="text" name="timkiem" [(ngModel)]="timkiem" id="" placeholder="Tìm kiếm ...">
+               <button type="button"  (click)="search()" class="btn btn-primary" style="padding-left: 10px;
+               padding-top: 5px;
+               padding-right: 10px;
+               padding-bottom: 5px;
+               border-radius: 20px;" ><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div (click)="openSearch()" class="close_search">
+                    <i class="fa-solid fa-times"></i>
+                </div>
+            </div>
+
+
+
+              <div (click)="openMenu()" class="icon_search icon_bars">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+</header>
+<!-- !header -->

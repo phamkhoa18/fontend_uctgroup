@@ -1,0 +1,17 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<section class="detail" style="padding-top: 140px;">
+     <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+              <h2 style="text-align: center; padding-bottom: 20px;font-weight: 600; font-size: 30px;">{{oneItem.title}}</h2>
+            <div class="content">
+              <div class="container" style="padding-bottom: 70px;">
+                <span appLayout [innerHTML]="this.sanitizer.bypassSecurityTrustHtml(oneItem.description.toString())" class="item_content">
+                </span>
+
+              </div>
+            </div>
+            </div>
+          </div>
+     </div>
+</section>

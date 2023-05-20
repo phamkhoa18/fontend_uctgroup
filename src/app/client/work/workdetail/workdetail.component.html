@@ -1,0 +1,41 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+
+<main>
+  <section class="gioithieu" >
+       <div class="banner">
+             <h2>{{parent.title}}</h2>
+       </div>
+       <div class="item_gioithieu">
+           <div class="container">
+             <div class="row" *ngIf="isDanhmuc" >
+                 <div class="col-xs-6 col-md-6 col-lg-6" *ngFor="let item of listchild">
+                  <div class="card" style="box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;">
+                    <div class="card-body" style="padding: 15px;">
+                      <h5 class="card-title"  style="font-size: 1rem; text-align: center !important; margin: 0;">{{item.title}}</h5>
+                      <br>
+                      <div class="gap-2" style="text-align: center;">
+                        <button type="button"  style="padding: 5px 10px; background-color: #ff2f2f; color: #ffff;     transition: all .4s ease;" routerLink="/vn/{{parent.link}}/{{item.link}}"  name="" id="" class="btn btn-danger hoverbtn">Xem thêm</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+
+             <!-- bài viết của danh mục -->
+             <div class="row" *ngIf="!isDanhmuc">
+              <div class="col-xs-6 col-md-6 col-lg-3" *ngFor="let item of listbaiviet" >
+                <div class="card" style="box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;" routerLink="/bai-viet/{{item.slug}}">
+
+                  <img [src]="item.image[0]" class="card-img-top hinh_size" alt="...">
+                  <div class="card-body"  style="padding: 20px; height: 100px;">
+                    <p class="card-title" ><a style="    color: black;text-decoration: none;text-align: center;" >{{item.title}}</a></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+           </div>
+       </div>
+  </section>
+</main>
+

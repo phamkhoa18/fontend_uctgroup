@@ -1,0 +1,19 @@
+@import url('../admin-styles.scss');
+table {
+  cursor: pointer;
+}
+.title:hover {
+  color: orangered;
+  transition: all 0.4ms ;
+}
+.title {
+  transition: all 0.4ms ease;
+}
+
+
+.edit:hover {
+  color: orangered;
+}
+.remove:hover {
+  color: orangered;
+}

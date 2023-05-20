@@ -1,0 +1,77 @@
+
+
+.hinh {
+  display: flex;
+}
+
+
+.item {
+  margin-right: 10px;
+}
+
+.item {
+  position: relative;
+}
+
+.item img {
+    height: 100px;
+    width: 150px;
+}
+.fa-xmark {
+  cursor: pointer;
+  font-size: 20px;
+  right: 0;
+}
+
+
+
+.dialog1 {
+  max-width: 50%;
+  margin: 0 auto;
+  }
+
+  .modal-content {
+  height: 100%;
+  }
+
+  .body1 {
+  height: calc(100% - 56px);
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.form-control {
+  color: black !important;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .dialog1 {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important ;
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .dialog1 {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important ;
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dialog1 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    max-width: 90% !important;
+  }
+}
+

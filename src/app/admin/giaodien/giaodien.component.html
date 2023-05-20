@@ -1,0 +1,306 @@
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+
+ <!--  Main wrapper -->
+ <div class="body-wrapper" *ngIf="!isLoading">
+  <!--  Header End -->
+  <div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4" style="font-size: 20px;">Tùy chỉnh Giao diện Trang chủ</h5>
+          <div class="card">
+
+            <!-- Slider -->
+            <div class="card-body p-4">
+                <div class="mb-3">
+                  <label for="" class="form-label">CAUROUSEL-SLIDER-SHOW</label>
+                </div>
+                <button type="button" class="btn btn-primary" style="margin-bottom: 10px;" (click)="add_slider()"  data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm Hình</button>
+                <div class="row">
+                <div class="col-xs-4 col-md-3 col-lg-2"  style=" position: relative; width: 150px;" *ngFor="let item1 of slider">
+                    <img  [src]="item1.image" alt="" style=" position: relative;" style="width: 100%; height: 100px;">
+                    <i class="fa-solid fa-xmark" style="position: absolute; right: 15px;" (click)="del(item1)" ></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thông tin 1  -->
+
+            <div class="card-body p-4">
+              <div class="mb-3">
+                <label for="" class="form-label">THÔNG TIN SECTION 1</label>
+              </div>
+              <div class="row">
+                 <!-- nội dung 2 -->
+              <div class="col-xs-12 col-md-12 col-lg-6">
+                <!-- tiêu đề 2 -->
+                  <h4>Nội dung hiển thị Section 1</h4>
+                  <button type="button" class="btn btn-danger" (click)="add_section1()"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Hiển thị</button>
+            </div>
+                <!-- hình ảnh 1 -->
+                <!-- tối đa 4 tấm  -->
+                <div class="col-xs-12 col-md-12 col-lg-6">
+                  <!-- thêm hình mới  -->
+                  <button type="button" class="btn btn-primary" [disabled]="section1.length >= 4" (click)="add_section_img1()" style="margin-bottom: 10px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm Hình</button>
+                  <p style="color: red;" *ngIf="section1.length >= 4" >TỐI ĐA 4 TẤM HÌNH </p>
+                  <div class="row">
+                    <div class="col-xs-4 col-md-3 col-lg-2"  style=" position: relative; width: 150px;" *ngFor="let item1 of section1">
+                        <img  [src]="item1.image" alt="" style=" position: relative;" style="width: 100%; height: 100px; margin-bottom: 10px;">
+                        <i class="fa-solid fa-xmark" style="position: absolute; right: 15px;" (click)="del(item1)" ></i>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+
+
+           <!-- Thông tin 2  -->
+
+           <div class="card-body p-4">
+            <div class="mb-3">
+              <label for="" class="form-label">THÔNG TIN SECTION 2</label>
+            </div>
+            <div class="row">
+              <!-- nội dung 2 -->
+              <div class="col-xs-12 col-md-12 col-lg-6">
+                  <!-- tiêu đề 2 -->
+                    <h4>Nội dung hiển thị Section 2</h4>
+                    <button type="button" class="btn btn-danger"  (click)="add_section2()"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Hiển thị</button>
+              </div>
+              <!-- hình ảnh 2 -->
+              <!-- tối đa 4 tấm  -->
+              <div class="col-xs-12 col-md-12 col-lg-6">
+                <!-- thêm hình mới  -->
+                <button type="button" class="btn btn-primary" [disabled]="section2.length >= 3"  (click)="add_section_img2()" style="margin-bottom: 10px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm Hình</button>
+                <p style="color: red;" *ngIf="section2.length >= 3" >TỐI ĐA 3 TẤM HÌNH </p>
+                <div class="row">
+                  <div class="col-xs-4 col-md-3 col-lg-2"  style=" position: relative; width: 150px;" *ngFor="let item1 of section2">
+                      <img  [src]="item1.image" alt="" style=" position: relative;" style="width: 100%; height: 100px;">
+                      <i class="fa-solid fa-xmark" style="position: absolute; right: 15px;" (click)="del(item1)" ></i>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+
+        <!-- Thông tin 3  -->
+        <div class="card-body p-4">
+          <div class="mb-3">
+            <label for="" class="form-label">ĐỐI TÁC KHÁCH HÀNG</label>
+          </div>
+          <div class="row">
+            <!-- hình ảnh 2 -->
+            <!-- tối đa 4 tấm  -->
+            <div class="col-xs-12 col-md-12 col-lg-12">
+              <!-- thêm hình mới  -->
+              <button type="button" class="btn btn-primary" [disabled]="hexagon.length >= 5"  (click)="add_img_hexagon()" style="margin-bottom: 10px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm Hình</button>
+              <p style="color: red;" *ngIf="hexagon.length >= 5" >TỐI ĐA 5 TẤM HÌNH </p>
+              <div class="row">
+                <div class="col-xs-4 col-md-3 col-lg-2"  style=" position: relative; width: 150px;" *ngFor="let item1 of hexagon">
+                    <img  [src]="item1.image" alt="" style=" position: relative;" style="width: 100%; height: 100px;">
+                    <i class="fa-solid fa-xmark" style="position: absolute; right: 15px;" (click)="del(item1)" ></i>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- tùy chỉnh giao diện chung -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4" style="font-size: 20px;">Tùy chỉnh Giao diện Chung</h5>
+          <div class="card">
+
+            <!-- Slider -->
+            <div class="card-body p-4">
+                <div class="mb-3">
+                  <label for="" class="form-label">ICON THƯƠNG HIỆU</label>
+                </div>
+                <button type="button" class="btn btn-primary" [disabled]="icon.length >= 1" style="margin-bottom: 10px;" (click)="add_icon()"  data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm Hình</button>
+                <p style="color: red;" *ngIf="icon.length >= 1" >TỐI ĐA 1 TẤM HÌNH </p>
+                <div class="row">
+                <div class="col-xs-4 col-md-3 col-lg-2"  style=" position: relative; width: 150px;" *ngFor="let item1 of icon">
+                    <img  [src]="item1.image" alt="" style=" position: relative;" style="width: 100%; height: 100px;">
+                    <i class="fa-solid fa-xmark" style="position: absolute; right: 15px;" (click)="del(item1)" ></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thông tin 1  -->
+
+            <div class="card-body p-4">
+              <div class="mb-3">
+                <label for="" class="form-label">THÔNG TIN FOOTER</label>
+              </div>
+              <div class="row">
+                 <!-- nội dung 2 -->
+              <div class="col-xs-12 col-md-12 col-lg-4">
+                <!-- tiêu đề 2 -->
+                  <h4>Nội dung bên trái footer</h4>
+                  <button type="button" class="btn btn-danger" (click)="add_leftfooter()"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Hiển thị</button>
+            </div>
+                <!-- hình ảnh 1 -->
+                <!-- tối đa 4 tấm  -->
+                <div class="col-xs-12 col-md-12 col-lg-4">
+                  <!-- thêm hình mới  -->
+                  <button type="button" class="btn btn-primary" [disabled]="imgfooter.length >= 1" (click)="add_img_footer()" style="margin-bottom: 10px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm Hình</button>
+                  <p style="color: red;" *ngIf="imgfooter.length >= 1" >TỐI ĐA 1 TẤM HÌNH </p>
+                  <div class="row">
+                    <div class="col-xs-4 col-md-3 col-lg-2"  style=" position: relative; width: 150px;" *ngFor="let item1 of imgfooter">
+                        <img  [src]="item1.image" alt="" style=" position: relative;" style="width: 100%; height: 100px; margin-bottom: 10px;">
+                        <i class="fa-solid fa-xmark" style="position: absolute; right: 15px;" (click)="del(item1)" ></i>
+                    </div>
+                  </div>
+                </div>
+
+                  <!-- nội dung 2 -->
+              <div class="col-xs-12 col-md-12 col-lg-4">
+                <!-- tiêu đề 2 -->
+                  <h4>Nội dung bên phải footer</h4>
+                  <button type="button" class="btn btn-danger" (click)="add_rightfooter()"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Hiển thị</button>
+            </div>
+            </div>
+          </div>
+
+
+           <!-- Thông tin 2  -->
+
+           <div class="card-body p-4">
+            <div class="mb-3">
+              <label for="" class="form-label">THÔNG TIN LIÊN HỆ</label>
+            </div>
+            <div class="row">
+              <!-- nội dung 2 -->
+              <div class="col-xs-12 col-md-12 col-lg-6">
+                  <!-- tiêu đề 2 -->
+                    <h4>Nội dung hiển thị liên hệ</h4>
+                    <button type="button" class="btn btn-danger"  (click)="add_contact()"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Hiển thị</button>
+              </div>
+              <!-- hình ảnh 2 -->
+              <!-- tối đa 4 tấm  -->
+
+
+          </div>
+        </div>
+
+
+        <!-- Thông tin 3  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <form (submit)="submit(userForm)" #userForm="ngForm" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" >THÊM HÌNH </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card-body">
+          <input type="hidden" name="posision" #posision="ngModel" [(ngModel)]="image.posision" id="">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" >Title Hình:  <span style="color: red;" >*</span></label>
+                <input type="text" [(ngModel)]="image.title" #title="ngModel" placeholder="TITLE hình ...."  required name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label" >URL hình: <span style="color: red;" >*</span></label>
+                  <input type="text" [(ngModel)]="image.url" #url="ngModel" placeholder="URL hình ...."  required name="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Link hình: </label>
+                  <input type="text" [(ngModel)]="image.link" #link="ngModel" name="link" placeholder="Href hình ...." class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+    </div>
+  </form>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- thông tin hiển thị từng section của home -->
+<!-- Modal -->
+<div class="modal top fade"
+     id="exampleModal1"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true"
+     data-mdb-backdrop="true"
+     data-mdb-keyboard="true">
+  <div class="modal-dialog dialog1 modal-fullscreen" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-size: 17px !important;">THÔNG TIN BÀI VIẾT </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body body1" >
+          <div class="row">
+              <input type="hidden" name="_id" [(ngModel)]="content1._id" id="">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <label for="" class="form-label">Tiêu đề</label>
+                <input type="text"
+                class="form-control" name="title" [(ngModel)]="content1.title" id="" aria-describedby="helpId" placeholder="Tiêu đề section 1" style="margin-bottom: 10px;">
+              </div>
+
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <!-- công cụ soạn thảo  -->
+                <label for="" class="form-label">Soạn văn bản</label>
+              <div class="NgxEditor__Wrapper">
+                <ngx-editor-menu [editor]="editor"  [toolbar]="toolbar"> </ngx-editor-menu>
+                <ngx-editor [editor]="editor" name="content" #content="ngModel" [(ngModel)]="content1.content" [placeholder]="'Type here...'"></ngx-editor>
+              </div>
+              </div>
+
+
+          </div>
+          <!-- button -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="savecontent()" >Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

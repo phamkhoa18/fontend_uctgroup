@@ -1,0 +1,67 @@
+@import url('../client_styles.scss');
+
+.card img {
+  width: 100%;
+    height: 100%;
+}
+
+.banner {
+  background-color: #8a8888cc !important;
+}
+
+.item_gioithieu {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.card-text {
+  color: black;
+  font-size: 14px;
+}
+.card-title {
+  color: black;
+  font-size: 18px;
+  text-align: left !important;
+}
+.card-body {
+  display: block;
+  text-align: left;
+}
+.card {
+  border: 0;
+  box-shadow: none;
+  transition: all 0.4s ;
+  cursor: pointer;
+  transform: translate3d(0, 0, 0);
+  margin-bottom: 15px;
+}
+.card:hover {
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  transform: translate3d(0, -5px, 0);
+}
+.item_gioithieu {
+  padding-bottom: 90px;
+  padding-top: 50px;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hoverbtn:hover{
+  background-color: #fff !important;
+  color: #ff2f2f !important;
+}
+
+
+.hinh_size {
+  height: 250px !important;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .card-chinh {
+    height: 100% !important;
+  }
+}
